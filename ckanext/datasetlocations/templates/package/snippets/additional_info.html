@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{% block extras %}
+    {{super()}}
+    <h2>Glob</h2>
+  {% if pkg_dict.locations %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Location") }}</th>
+      <td class="dataset-details">{{ pkg_dict.locations }}</td>
+    </tr>
+  {% endif %}
+{% endblock %}

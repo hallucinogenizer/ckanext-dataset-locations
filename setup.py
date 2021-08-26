@@ -81,6 +81,7 @@ setup(
     entry_points='''
         [ckan.plugins]
         datasetlocations=ckanext.datasetlocations.plugin:DatasetlocationsPlugin
+        datasetLocationFacets=ckanext.datasetlocations.plugin:DatasetCategoriesPlugin 
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
