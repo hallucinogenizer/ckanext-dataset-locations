@@ -2,17 +2,20 @@
 
 {% block package_metadata_fields %}
 
+  {% set location_attrs = {'data-module': 'autocomplete', 'data-module-tags': '', 'data-module-source': '/api/2/util/tag/autocomplete?incomplete=?&vocabulary_id=locations'} %}
+  {{ form.input('tag_string', id='field-location', label=_('Locations'), placeholder=_('eg. Lahore'), value=data.locations, error=errors.locations, classes=['control-full'], attrs=location_attrs) }}
 
-  <div class="control-group">
+  {#<div class="control-group">
     <label class="control-label" for="field-location">{{ _("Locations") }}</label>
     <div class="controls">
-      <select id="field-location" name="location" data-module="autocomplete">
+      <select id="field-location" name="location" data-module="autocomplete" value="{{data.get('location')}}">
         {% for location in h.locations()  %}
           <option value="{{ location }}" {% if location in data.get('location', []) %} selected="selected"{% endif %}>{{ location }}</option>
         {% endfor %}
       </select>
     </div>
-  </div>
+  </div>#}
+
 
   {{ super() }}
 
